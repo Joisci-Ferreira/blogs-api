@@ -6,8 +6,15 @@ const create = async (name) => {
   return creatCategory;
 };
 
+const getAll = async () => {
+  const categories = await categoriesModel.getAll();
+
+  return categories;
+};
+
 const categoriesService = {
   create,
+  getAll,
 };
 
 module.exports = categoriesService;

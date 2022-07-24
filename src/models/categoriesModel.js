@@ -11,8 +11,17 @@ const create = async (name) => {
   return creatCategory;
 };
 
+const getAll = async () => {
+  const categories = await Category.findAll({
+    attributes: ['id', 'name'],
+  });
+
+  return categories;
+}
+
 const categoriesModel = {
   create,
+  getAll,
 };
 
 module.exports = categoriesModel;
